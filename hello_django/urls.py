@@ -19,5 +19,6 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('<conta>/<int:num1>/<int:num2>/', views.calculo),
     path('hello/<nome>/<int:idade>/', views.hello)
 ]

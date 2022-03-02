@@ -7,15 +7,15 @@ def hello(request, nome, idade):
 def calculo(request,conta,num1,num2):
     if conta == "soma":
         conta = num1 + num2
-        simbolo = "+"
+        simbolo = ["+","soma"]
     if conta == "sub":
         conta = num1 - num2
-        simbolo = "-"
+        simbolo = ["-","subtração"]
     if conta == "div":
         conta = num1 / num2
-        simbolo = "/"
+        simbolo = ["/","divisão"]
     if conta == "mult":
         conta = num1 * num2
-        simbolo = "*"
+        simbolo = ["*","multiplicação"]
 
-    return HttpResponse('<h1> Hello, a sua soma é {} {} {} = {} </h1>'.format(num1,simbolo, num2, conta))
+    return HttpResponse('<h1> Hello, a sua {} é {} {} {} = {} </h1>'.format(simbolo[1],num1,simbolo[0], num2, conta))
